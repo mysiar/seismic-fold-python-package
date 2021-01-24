@@ -119,6 +119,8 @@ class Fold:
                     self.calculate_fold4xps_record(sp, relation)
 
                 line = xps.readline()
+            if self.__verbose is True:
+                print("{:15,d}".format(counter))
 
     def parse_xps_record(self, record: str):
         parsed = self.__parser.parse_relation(record)
