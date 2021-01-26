@@ -1,3 +1,4 @@
+import sys
 import csv
 
 from FixedWidthTextParser.Seismic.SpsParser import SpsParser, Relation, Point
@@ -102,7 +103,8 @@ class Fold:
                     if self.__verbose is True:
                         counter += 1
                         if counter % self.__every == 0:
-                            print("{:15,d}".format(counter))
+                            sys.stdout.write("{:15,d}\n".format(counter))
+                            sys.stdout.flush()
                     sln = relation.line
                     spn = relation.point
                     sidx = relation.point_idx
@@ -120,7 +122,8 @@ class Fold:
 
                 line = xps.readline()
             if self.__verbose is True:
-                print("{:15,d}".format(counter))
+                sys.stdout.write("{:15,d}\n".format(counter))
+                sys.stdout.flush()
 
     def parse_xps_record(self, record: str):
         parsed = self.__parser.parse_relation(record)

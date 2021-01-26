@@ -8,7 +8,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="SeismicFold",
-    version="0.0.2",
+    version="0.1.0",
     author="Piotr Synowiec",
     author_email="psynowiec@gmail.com",
     description="Calculates fold from SPS data",
